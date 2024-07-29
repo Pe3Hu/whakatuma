@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://plxqtago0ouw"]
+
+[ext_resource type="Script" path="res://scene/1/sector.gd" id="1_vmm7c"]
+[ext_resource type="PackedScene" uid="uid://cbm1si2has2pg" path="res://scene/0/framed_label.tscn" id="2_41rki"]
+
+[node name="Sector" type="Polygon2D" node_paths=PackedStringArray("framedLabel")]
+visible = false
+script = ExtResource("1_vmm7c")
+framedLabel = NodePath("FramedLabel")
+
+[node name="FramedLabel" parent="." instance=ExtResource("2_41rki")]

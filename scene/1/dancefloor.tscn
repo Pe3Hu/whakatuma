@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqx3liprr06hr"]
+
+[ext_resource type="Script" path="res://scene/1/dancefloor.gd" id="1_tv5f0"]
+
+[node name="Dancefloor" type="Node2D" node_paths=PackedStringArray("platforms", "bridges", "sectors")]
+script = ExtResource("1_tv5f0")
+platforms = NodePath("Platforms")
+bridges = NodePath("Bridges")
+sectors = NodePath("Sectors")
+
+[node name="Bridges" type="Node2D" parent="."]
+
+[node name="Sectors" type="Node2D" parent="."]
+
+[node name="Platforms" type="Node2D" parent="."]
