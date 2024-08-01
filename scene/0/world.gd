@@ -12,7 +12,7 @@ class_name World extends Node2D
 
 
 func _ready() -> void:
-	position = Global.vec.size.window.center
+	#position = Global.vec.size.window.center
 	#datas.filter(func (a): return true)
 	#datas.sort_custom(func(a, b): return a.value < b.value)
 	#012 description

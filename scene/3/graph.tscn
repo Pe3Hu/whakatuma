@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh1qva30aarvr"]
+
+[ext_resource type="Script" path="res://scene/3/graph.gd" id="1_7td53"]
+
+[node name="Graph" type="Node2D" node_paths=PackedStringArray("ramifications", "branchs")]
+script = ExtResource("1_7td53")
+ramifications = NodePath("Ramifications")
+branchs = NodePath("Branchs")
+
+[node name="Branchs" type="Node2D" parent="."]
+
+[node name="Ramifications" type="Node2D" parent="."]

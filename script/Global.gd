@@ -20,12 +20,16 @@ func _ready() -> void:
 	init_dict()
 	
 func init_arr() -> void:
-	arr.pass = []
+	arr.order = ["first", "second"]
 	
 func init_num() -> void:
 	num.index = {}
+	num.index.platform = 0
 	num.index.bridge = 0
 	num.index.sector = 0
+	
+	num.index.ramification = 0
+	num.index.branch = 0
 	
 func init_dict() -> void:
 	init_direction()
@@ -135,8 +139,25 @@ func init_window_size():
 	vec.size.window.center = Vector2(vec.size.window.width/2, vec.size.window.height/2)
 	
 func init_color():
-	#var h = 360.0
-	pass
+	var h = 360.0
+	
+	color.platform = {}
+	color.platform["1"] = Color.from_hsv(15.0 / h, 0.9, 0.9)
+	color.platform["2"] = Color.from_hsv(105.0 / h, 0.9, 0.9)
+	color.platform["3"] = Color.from_hsv(195.0 / h, 0.9, 0.9)
+	color.platform["4"] = Color.from_hsv(285.0 / h, 0.9, 0.9)
+	
+	color.bridge = {}
+	color.bridge["50"] = Color.from_hsv(60.0 / h, 0.6, 0.6)
+	color.bridge["70"] = Color.from_hsv(120.0 / h, 0.6, 0.6)
+	color.bridge["80"] = Color.from_hsv(180.0 / h, 0.6, 0.6)
+	color.bridge["100"] = Color.from_hsv(240.0 / h, 0.6, 0.6)
+	color.bridge["140"] = Color.from_hsv(300.0 / h, 0.6, 0.6)
+	color.bridge["160"] = Color.from_hsv(0.0 / h, 0.6, 0.6)
+	
+	color.club = {}
+	color.club.first = Color.from_hsv(210.0 / h, 0.9, 0.9, 0.1)
+	color.club.second = Color.from_hsv(0.0 / h, 0.9, 0.9, 0.1)
 	
 func save(path_: String, data_: String):
 	var path = path_ + ".json"

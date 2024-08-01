@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxl7kfpkxl1oh"]
+
+[ext_resource type="Script" path="res://scene/2/judge.gd" id="1_55vty"]
+[ext_resource type="PackedScene" uid="uid://dh1qva30aarvr" path="res://scene/3/graph.tscn" id="2_qw0l0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obprw"]
+
+[node name="Judge" type="PanelContainer" node_paths=PackedStringArray("graph")]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_obprw")
+script = ExtResource("1_55vty")
+graph = NodePath("Graph")
+
+[node name="Graph" parent="." node_paths=PackedStringArray("judge") instance=ExtResource("2_qw0l0")]
+judge = NodePath("..")

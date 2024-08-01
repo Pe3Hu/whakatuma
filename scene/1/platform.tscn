@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc6sc73smuraa"]
+[gd_scene load_steps=3 format=3 uid="uid://dc6sc73smuraa"]
 
 [ext_resource type="Script" path="res://scene/1/platform.gd" id="1_yymhd"]
+[ext_resource type="PackedScene" uid="uid://cbm1si2has2pg" path="res://scene/0/framed_label.tscn" id="2_flvay"]
 
-[node name="Platform" type="Polygon2D"]
+[node name="Platform" type="Polygon2D" node_paths=PackedStringArray("indexLabel", "powerLabel")]
 script = ExtResource("1_yymhd")
+indexLabel = NodePath("IndexLabel")
+powerLabel = NodePath("PowertLabel")
+
+[node name="IndexLabel" parent="." instance=ExtResource("2_flvay")]
+visible = false
+
+[node name="PowertLabel" parent="." instance=ExtResource("2_flvay")]

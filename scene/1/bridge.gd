@@ -1,7 +1,7 @@
 class_name Bridge extends Line2D
 
 
-@export var framedLabel: FramedLabel
+@export var indexLabel: FramedLabel
 @export var dancefloor: Dancefloor:
 	set(dancefloor_):
 		dancefloor = dancefloor_
@@ -10,13 +10,12 @@ class_name Bridge extends Line2D
 		resource.type = "frame"
 		resource.subtype = "bridge"
 		resource.value = Global.num.index.bridge
-		framedLabel.set_resource(resource)
+		indexLabel.set_resource(resource)
 		
 		index = int(Global.num.index.bridge)
 		Global.num.index.bridge += 1
 	get:
 		return dancefloor
-
 @export var platforms: Array:
 	set(platforms_):
 		platforms = platforms_
@@ -33,11 +32,11 @@ func init_vertexs() -> void:
 	for platform in platforms:
 		var vertex = platform.position
 		add_point(vertex)
-		framedLabel.position += vertex
+		indexLabel.position += vertex
 	
-	framedLabel.position /= platforms.size()
-	framedLabel.position -= framedLabel.max_size / 2
-	default_color = Color.from_hsv(float(index) / 30, 1.0, 1.0)
+	indexLabel.position /= platforms.size()
+	indexLabel.position -= indexLabel.max_size / 2
+	width = dancefloor.bridge_width
 	
 	length = round(platforms[0].position.distance_to(platforms[1].position) / 10) * 10
 	
@@ -45,3 +44,6 @@ func init_vertexs() -> void:
 		dancefloor.lengths[length] = []
 	
 	dancefloor.lengths[length].append(self)
+	#default_color = Color.from_hsv(float(index) / 30, 1.0, 1.0)
+	if Global.color.bridge.has(str(length)):
+		default_color = Global.color.bridge[str(length)]

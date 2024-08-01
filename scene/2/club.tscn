@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckohhfynwtfnt"]
+
+[ext_resource type="Script" path="res://scene/2/club.gd" id="1_bbkg7"]
+[ext_resource type="PackedScene" uid="uid://bqx3liprr06hr" path="res://scene/1/dancefloor.tscn" id="2_nsf7k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_to08f"]
+bg_color = Color(0.6, 0.6, 0.6, 0.490196)
+
+[node name="Club" type="PanelContainer" node_paths=PackedStringArray("dancefloor")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_to08f")
+script = ExtResource("1_bbkg7")
+dancefloor = NodePath("Dancefloor")
+
+[node name="Dancefloor" parent="." node_paths=PackedStringArray("club") instance=ExtResource("2_nsf7k")]
+club = NodePath("..")

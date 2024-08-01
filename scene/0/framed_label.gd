@@ -16,10 +16,6 @@ func set_resource(resource_: TripletResource) -> void:
 func update_ui() -> void:
 	var _path = resource.type
 	var _name = resource.subtype
-	
-	if resource.type == "parameter":
-		_name += " " + resource.measure
-		
 	frame.texture = load("res://asset/png/" + _path +  "/" + _name + ".png")
 	
 func update_label() -> void:

@@ -1,7 +1,14 @@
 class_name Dancefloor extends Node2D
 
 
-@export var world: World
+@export var resource: DispositionResource:
+	set(resource_):
+		resource = resource_
+		
+		update_platform_powers()
+	get:
+		return resource
+@export var club: Club
 @export var platforms: Node2D
 @export var bridges: Node2D
 @export var sectors: Node2D
@@ -14,12 +21,23 @@ var segments: Dictionary
 var lengths: Dictionary
 
 const offset_platform = 240
+const platform_extent = 15
+const bridge_width = 10
 
 
 func _ready() -> void:
+	club.custom_minimum_size = Vector2(offset_platform * sqrt(3), offset_platform * 2)
+	position = club.custom_minimum_size / 2 + Vector2.ONE * platform_extent
+	club.custom_minimum_size.y = offset_platform * 1.5
+	club.custom_minimum_size += Vector2.ONE * platform_extent * 2
+	
 	init_platforms()
 	init_bridges()
 	init_sectors()
+	
+	var _resource = DispositionResource.new()
+	_resource.powers = [5,4,4,3,3,3,2,2,2,2,1,1,1,1,1]
+	resource = _resource
 	
 func init_platforms() -> void:
 	for _i in 4:
@@ -66,18 +84,19 @@ func init_quaternary_platforms() -> void:
 		var vector = get_cross_bridges(a, b)
 		add_platform(segment, vector)
 	
-func add_platform(segement_: int, vector_: Vector2) -> void:
+func add_platform(segment_: int, vector_: Vector2) -> void:
 	var platform = platform_scene.instantiate()
 	platform.dancefloor = self
 	platform.position = vector_
+	platform.segment = segment_
 	platforms.add_child(platform)
-	segments[segement_].append(platform)
+	segments[segment_].append(platform)
 	
-func add_part(segement_: int, a_: Platform, b_: Platform, step_: int) -> void:
+func add_part(segment_: int, a_: Platform, b_: Platform, step_: int) -> void:
 	var vector = (a_.position - b_.position).normalized()
-	vector *= (a_.position - b_.position).length() / segement_ * step_
+	vector *= (a_.position - b_.position).length() / segment_ * step_
 	vector += b_.position
-	add_platform(segement_, vector)
+	add_platform(segment_, vector)
 	
 func add_bridge(a_: Platform, b_: Platform) -> void:
 	var bridge = bridge_scene.instantiate()
@@ -202,3 +221,9 @@ func add_sector(indexs_: Array) -> void:
 		sectors.add_child(sector)
 		sector.dancefloor = self
 		sector.bridges = _brigdes
+	
+func update_platform_powers() -> void:
+	for _i in resource.indexs.size():
+		var index = resource.indexs[_i]
+		var platform = platforms.get_child(index)
+		platform.power = resource.powers[_i]

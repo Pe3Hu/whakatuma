@@ -1,12 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbke1d3q0kvq8"]
+[gd_scene load_steps=4 format=3 uid="uid://cbke1d3q0kvq8"]
 
 [ext_resource type="Script" path="res://scene/2/arena.gd" id="1_sivpd"]
+[ext_resource type="PackedScene" uid="uid://cxl7kfpkxl1oh" path="res://scene/2/judge.tscn" id="2_m3dqt"]
 
-[node name="Arena" type="Node2D" node_paths=PackedStringArray("minions", "spells")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqiix"]
+
+[node name="Arena" type="PanelContainer" node_paths=PackedStringArray("judge", "clubs")]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tqiix")
 script = ExtResource("1_sivpd")
-minions = NodePath("Minions")
-spells = NodePath("Spells")
+judge = NodePath("HBox/Judge")
+clubs = NodePath("HBox/Clubs")
 
-[node name="Minions" type="Node2D" parent="."]
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
 
-[node name="Spells" type="Node2D" parent="."]
+[node name="Clubs" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Judge" parent="HBox" node_paths=PackedStringArray("arena") instance=ExtResource("2_m3dqt")]
+layout_mode = 2
+arena = NodePath("../..")

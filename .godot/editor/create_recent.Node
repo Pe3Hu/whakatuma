@@ -1,7 +1,10 @@
+HBoxContainer
+VBoxContainer
+Node2D
+PanelContainer
 CollisionShape2D
 Area2D
 Polygon2D
-Node2D
 CharacterBody2D
 Line2D
 TileMap
@@ -9,6 +12,3 @@ AnimationPlayer
 AnimatedSprite2D
 Sprite2D
 CanvasLayer
-GridContainer
-Panel
-NinePatchRect

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bot1eqos4dx6j"]
+
+[ext_resource type="Script" path="res://scene/3/branch.gd" id="1_88cnl"]
+[ext_resource type="PackedScene" uid="uid://cbm1si2has2pg" path="res://scene/0/framed_label.tscn" id="2_j7yx3"]
+
+[node name="Branch" type="Line2D"]
+script = ExtResource("1_88cnl")
+
+[node name="IndexLabel" parent="." instance=ExtResource("2_j7yx3")]
+visible = false

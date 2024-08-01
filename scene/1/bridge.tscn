@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scene/1/bridge.gd" id="1_04fns"]
 [ext_resource type="PackedScene" uid="uid://cbm1si2has2pg" path="res://scene/0/framed_label.tscn" id="2_qg047"]
 
-[node name="Bridge" type="Line2D" node_paths=PackedStringArray("framedLabel")]
-visible = false
+[node name="Bridge" type="Line2D" node_paths=PackedStringArray("indexLabel")]
 script = ExtResource("1_04fns")
-framedLabel = NodePath("FramedLabel")
+indexLabel = NodePath("IndexLabel")
 
-[node name="FramedLabel" parent="." instance=ExtResource("2_qg047")]
+[node name="IndexLabel" parent="." instance=ExtResource("2_qg047")]
+visible = false

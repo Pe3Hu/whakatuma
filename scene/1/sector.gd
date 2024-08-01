@@ -1,8 +1,7 @@
 class_name Sector extends Polygon2D
 
 
-@export var framedLabel: FramedLabel
-@export var platforms: Array[Platform]
+@export var IndexLabel: FramedLabel
 @export var bridges: Array:
 	set(bridges_):
 		bridges = bridges_
@@ -18,7 +17,7 @@ class_name Sector extends Polygon2D
 		resource.type = "frame"
 		resource.subtype = "bridge"
 		resource.value = Global.num.index.sector
-		framedLabel.set_resource(resource)
+		IndexLabel.set_resource(resource)
 		
 		index = int(Global.num.index.sector)
 		Global.num.index.sector += 1
@@ -26,6 +25,7 @@ class_name Sector extends Polygon2D
 		return dancefloor
 
 var index: int
+var platforms: Array[Platform]
 
 
 func init_platforms() -> void:
@@ -36,9 +36,9 @@ func init_platforms() -> void:
 			if !platforms.has(platform):
 				platforms.append(platform)
 				vertexs.append(platform.position)
-				framedLabel.position += platform.position
+				IndexLabel.position += platform.position
 	
-	framedLabel.position /= platforms.size()
-	framedLabel.position -= framedLabel.max_size / 2
+	IndexLabel.position /= platforms.size()
+	IndexLabel.position -= IndexLabel.max_size / 2
 	color = Color.from_hsv(float(index) / 13, 1.0, 1.0)
 	set_polygon(vertexs)
