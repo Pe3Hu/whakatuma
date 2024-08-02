@@ -19,4 +19,5 @@ var second: Club
 func roll_root() -> void:
 	var opitons = [14]
 	var index = opitons.pick_random()
-	graph.add_ramification(index)
+	graph.add_ramification(index, null)
+	graph.next_iteration()

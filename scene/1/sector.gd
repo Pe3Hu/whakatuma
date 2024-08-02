@@ -40,5 +40,5 @@ func init_platforms() -> void:
 	
 	IndexLabel.position /= platforms.size()
 	IndexLabel.position -= IndexLabel.max_size / 2
-	color = Color.from_hsv(float(index) / 13, 1.0, 1.0)
+	color = Color.from_hsv(float(index) / 13, 1.0, 1.0, 0.1)
 	set_polygon(vertexs)

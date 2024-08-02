@@ -31,6 +31,10 @@ func _ready() -> void:
 	club.custom_minimum_size.y = offset_platform * 1.5
 	club.custom_minimum_size += Vector2.ONE * platform_extent * 2
 	
+	Global.num.index.platform = 0
+	Global.num.index.bridge = 0
+	Global.num.index.sector = 0
+	
 	init_platforms()
 	init_bridges()
 	init_sectors()

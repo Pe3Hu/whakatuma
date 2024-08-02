@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c081m8jsm2gqq"]
+[gd_scene load_steps=3 format=3 uid="uid://bpkuwyb8p2anh"]
 
 [ext_resource type="Script" path="res://scene/3/ramification.gd" id="1_jffqy"]
-[ext_resource type="PackedScene" uid="uid://lu505p4aa3q5" path="res://scene/0/framed_ramification.tscn" id="2_70mk8"]
+[ext_resource type="PackedScene" uid="uid://lu505p4aa3q5" path="res://scene/0/framed_ramification.tscn" id="2_a30bj"]
 
 [node name="Ramification" type="Polygon2D" node_paths=PackedStringArray("framedRamification")]
-color = Color(1, 1, 1, 0.0627451)
+color = Color(0.494118, 0.494118, 0.494118, 0.435294)
 script = ExtResource("1_jffqy")
 framedRamification = NodePath("FramedRamification")
 
-[node name="FramedRamification" parent="." instance=ExtResource("2_70mk8")]
-custom_minimum_size = Vector2(90, 45)
+[node name="FramedRamification" parent="." instance=ExtResource("2_a30bj")]

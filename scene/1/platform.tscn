@@ -9,6 +9,6 @@ indexLabel = NodePath("IndexLabel")
 powerLabel = NodePath("PowertLabel")
 
 [node name="IndexLabel" parent="." instance=ExtResource("2_flvay")]
-visible = false
 
 [node name="PowertLabel" parent="." instance=ExtResource("2_flvay")]
+visible = false

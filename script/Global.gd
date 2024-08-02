@@ -35,6 +35,8 @@ func init_dict() -> void:
 	init_direction()
 	init_corner()
 	
+	init_platform()
+	
 func init_direction() -> void:
 	dict.direction = {}
 	dict.direction.linear3 = [
@@ -105,26 +107,31 @@ func init_corner() -> void:
 				var vertex = Vector2(1,0).rotated(angle)
 				dict.corner.vector[corners_][order_].append(vertex)
 	
-func init_blank() -> void:
-	dict.blank = {}
-	dict.blank.rank = {}
-	var exceptions = ["rank"]
+func init_platform() -> void:
+	dict.platform = {}
+	dict.platform.index = {}
+	var exceptions = ["index"]
 	
-	var path = "res://asset/json/maoiri_blank.json"
-	var array = load_data(path)
+	var path = "res://asset/json/whakatuma_platform.json"
+	var dictionary = load_data(path)
+	var array = dictionary["blank"]
 	
-	for blank in array:
-		blank.rank = int(blank.rank)
+	for platform in array:
+		platform.index = int(platform.index)
 		var data = {}
 		
-		for key in blank:
+		for key in platform:
 			if !exceptions.has(key):
-				data[key] = blank[key]
+				var indexs = platform[key].split(",")
+				data[key] = []
+				
+				for index in indexs:
+					data[key].append(int(index))
 			
-		if !dict.blank.rank.has(blank.rank):
-			dict.blank.rank[blank.rank] = []
+		if !dict.platform.index.has(platform.index):
+			dict.platform.index[platform.index] = {}
 	
-		dict.blank.rank[blank.rank].append(data)
+		dict.platform.index[platform.index] = data
 	
 func init_vec():
 	vec.size = {}

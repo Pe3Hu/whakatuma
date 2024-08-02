@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" path="res://scene/3/graph.gd" id="1_7td53"]
 
-[node name="Graph" type="Node2D" node_paths=PackedStringArray("ramifications", "branchs")]
+[node name="Graph" type="Node2D" node_paths=PackedStringArray("ramifications", "branchs", "iterations")]
 script = ExtResource("1_7td53")
 ramifications = NodePath("Ramifications")
 branchs = NodePath("Branchs")
+iterations = NodePath("Iterations")
+
+[node name="Iterations" type="Node2D" parent="."]
 
 [node name="Branchs" type="Node2D" parent="."]
 

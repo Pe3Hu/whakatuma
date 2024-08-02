@@ -9,8 +9,18 @@ class_name Ramification extends Polygon2D
 		init_vertexs()
 		index = int(Global.num.index.ramification)
 		Global.num.index.ramification += 1
+		unvisited_platforms.append_array(Global.dict.platform.index.keys())
 	get:
 		return graph
+@export var previous_ramification: Ramification:
+	set(previous_ramification_):
+		previous_ramification = previous_ramification_
+		
+		if previous_ramification != null:
+			for index in previous_ramification.visited_platforms:
+				set_platform_index_as_visited(index)
+	get:
+		return previous_ramification
 @export var platform_index: int:
 	set(platform_index_):
 		platform_index = platform_index_
@@ -22,6 +32,7 @@ class_name Ramification extends Polygon2D
 			powers += platform.power
 		
 		framedRamification.ramification = self
+		set_platform_index_as_visited(platform_index)
 	get:
 		return platform_index
 
@@ -29,6 +40,8 @@ var grid: Vector2i
 var index: int
 var platforms: Array
 var powers: int = 0
+var visited_platforms = []
+var unvisited_platforms = []
 
 
 func init_vertexs() -> void:
@@ -41,3 +54,13 @@ func init_vertexs() -> void:
 	
 	set_polygon(vertexs)
 	framedRamification.position -= framedRamification.custom_minimum_size / 2
+	
+func set_platform_index_as_visited(index_: int) -> void:
+	if unvisited_platforms.has(index_):
+		unvisited_platforms.erase(index_)
+	
+	if !visited_platforms.has(index_):
+		visited_platforms.append(index_)
+	
+func get_next_platform_indexs() -> Array:
+	return Global.dict.platform.index[platform_index].platforms.filter(func (a): return unvisited_platforms.has(a))

@@ -1,0 +1,64 @@
+{
+"blank":[
+ {
+  "index": "0",
+  "platforms": "7,10,14"
+ },
+ {
+  "index": "1",
+  "platforms": "6,9,12"
+ },
+ {
+  "index": "2",
+  "platforms": "8,11,13"
+ },
+ {
+  "index": "3",
+  "platforms": "6,7,14"
+ },
+ {
+  "index": "4",
+  "platforms": "8,9,12"
+ },
+ {
+  "index": "5",
+  "platforms": "10,11,13"
+ },
+ {
+  "index": "6",
+  "platforms": "1,3,12"
+ },
+ {
+  "index": "7",
+  "platforms": "0,3,14"
+ },
+ {
+  "index": "8",
+  "platforms": "2,4,13"
+ },
+ {
+  "index": "9",
+  "platforms": "1,4,12"
+ },
+ {
+  "index": "10",
+  "platforms": "0,5,14"
+ },
+ {
+  "index": "11",
+  "platforms": "2,5,13"
+ },
+ {
+  "index": "12",
+  "platforms": "1,4,6,9,13,14"
+ },
+ {
+  "index": "13",
+  "platforms": "2,5,8,11,12,14"
+ },
+ {
+  "index": "14",
+  "platforms": "0,3,7,10,12,13"
+ }
+]
+}
