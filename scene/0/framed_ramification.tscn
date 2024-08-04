@@ -4,14 +4,14 @@
 [ext_resource type="FontFile" uid="uid://33eqagvh85us" path="res://asset/font/digital/Inter-Black.ttf" id="2_c4ocj"]
 [ext_resource type="PackedScene" uid="uid://dxvkb8wp04phy" path="res://scene/0/power_probability.tscn" id="3_uccsa"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsolj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma2xl"]
+bg_color = Color(0.6, 0.6, 0.6, 0.572549)
 
 [node name="FramedRamification" type="PanelContainer" node_paths=PackedStringArray("first", "second", "indexRamification", "indexPlatform")]
-custom_minimum_size = Vector2(100, 50)
 offset_right = 32.0
 offset_bottom = 32.0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_gsolj")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma2xl")
 script = ExtResource("1_qntuf")
 first = NodePath("HBox/Powers/First")
 second = NodePath("HBox/Powers/Second")
@@ -36,6 +36,7 @@ theme_override_constants/separation = 4
 alignment = 1
 
 [node name="Ramification" type="Label" parent="HBox/Indexs"]
+visible = false
 texture_filter = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.17, 0.17, 0.17, 1)

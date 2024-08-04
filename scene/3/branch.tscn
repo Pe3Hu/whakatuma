@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bot1eqos4dx6j"]
+[gd_scene load_steps=3 format=3 uid="uid://bin6t7cbngoby"]
 
+[ext_resource type="PackedScene" uid="uid://53g38ar71whb" path="res://scene/0/branch_prize.tscn" id="1_85p8w"]
 [ext_resource type="Script" path="res://scene/3/branch.gd" id="1_88cnl"]
-[ext_resource type="PackedScene" uid="uid://cbm1si2has2pg" path="res://scene/0/framed_label.tscn" id="2_j7yx3"]
 
-[node name="Branch" type="Line2D"]
+[node name="Branch" type="Line2D" node_paths=PackedStringArray("branchPrize")]
 script = ExtResource("1_88cnl")
+branchPrize = NodePath("BranchPrize")
 
-[node name="IndexLabel" parent="." instance=ExtResource("2_j7yx3")]
-visible = false
+[node name="BranchPrize" parent="." instance=ExtResource("1_85p8w")]

@@ -8,3 +8,4 @@ script = ExtResource("1_04fns")
 indexLabel = NodePath("IndexLabel")
 
 [node name="IndexLabel" parent="." instance=ExtResource("2_qg047")]
+visible = false

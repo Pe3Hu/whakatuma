@@ -16,9 +16,11 @@ class_name FramedRamification extends PanelContainer
 
 
 func init_powers() -> void:
-	#for _i in Global.arr.order.size():
-	#	var order = Global.arr.order[_i]
 	for order in Global.arr.order:
 		var powerProbability = get(order)
 		powerProbability.club = ramification.graph.judge.get(order)
- 		#powerProbability.platform = ramification.platforms[_i]
+	
+func set_bg_color(color_: Color) -> void:
+	var style = StyleBoxFlat.new()
+	style.bg_color = color_
+	set("theme_override_styles/panel", style)

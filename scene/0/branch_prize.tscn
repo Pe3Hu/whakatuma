@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://53g38ar71whb"]
+
+[ext_resource type="Script" path="res://scene/0/branch_prize.gd" id="1_g3nm0"]
+[ext_resource type="FontFile" uid="uid://33eqagvh85us" path="res://asset/font/digital/Inter-Black.ttf" id="2_soq1j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4a0es"]
+bg_color = Color(0.462291, 0.462291, 0.46229, 0.611765)
+
+[node name="BranchPrize" type="PanelContainer" node_paths=PackedStringArray("index", "prize")]
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4a0es")
+script = ExtResource("1_g3nm0")
+index = NodePath("Labels/Index")
+prize = NodePath("Labels/Prize")
+
+[node name="Labels" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Index" type="Label" parent="Labels"]
+visible = false
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.17, 0.17, 0.17, 1)
+theme_override_fonts/font = ExtResource("2_soq1j")
+theme_override_font_sizes/font_size = 14
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Prize" type="Label" parent="Labels"]
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0.17, 0.17, 0.17, 1)
+theme_override_fonts/font = ExtResource("2_soq1j")
+theme_override_font_sizes/font_size = 14
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1

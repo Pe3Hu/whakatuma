@@ -19,9 +19,12 @@ class_name PowerProbability extends PanelContainer
 @export var power: Label
 @export var probability: Label
 
+var proportion: float
+
 
 func init_labels_text() -> void:
 	var _i = Global.arr.order.find(club.order)
 	var platform = framed_ramification.ramification.platforms[_i]
 	power.text = str(platform.power)
-	probability.text = str(platform.power * 100 / framed_ramification.ramification.powers) + "%"
+	proportion = snapped(float(platform.power) / framed_ramification.ramification.powers, 0.01)
+	probability.text = str(int(proportion * 100)) + "%"
