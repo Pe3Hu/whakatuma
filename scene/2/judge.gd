@@ -20,17 +20,27 @@ var swallow_col: int
 
 
 func roll_root() -> void:
+	var dispositions = {}
+	
+	for order in Global.arr.order:
+		var club = get(order)
+		dispositions[order] = club.dancefloor.resource
+	
+	var obstacles = [4, 7]
 	var opitons = [14]
 	var index = opitons.pick_random()
+	
+	graph.resource = GraphResource.new()
+	graph.resource.set_dispositions(dispositions).set_obstacles(obstacles).set_origin(index).init()
 	graph.add_ramification(index, null)
 	
-	for _i in 15:
+	for _i in 2:
 		graph.next_iteration()
 	
 	align_graph()
 	final_clean()
 	#get_all_roots()
-	swallow_iterations()
+	#swallow_iterations()
 	
 func align_graph() -> void:
 	var flag = false

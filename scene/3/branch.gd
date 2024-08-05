@@ -28,8 +28,6 @@ class_name Branch extends Line2D
 		branchPrize.init_labels_text()
 	get:
 		return prize
-
-var index: int
 @export var is_swallowed: bool = false:
 	set(is_swallowed_):
 		is_swallowed = is_swallowed_
@@ -37,6 +35,7 @@ var index: int
 	get:
 		return is_swallowed
 
+var index: int
 
 func update_vertexs() -> void:
 	var step = 2

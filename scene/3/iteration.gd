@@ -2,8 +2,6 @@ class_name Iteration extends Polygon2D
 
 
 @export var graph: Graph
-@export var branchs: Array[Branch]
-@export var ramifications: Array[Ramification]
 @export var col: int:
 	set(col_):
 		col = col_
@@ -24,8 +22,11 @@ class_name Iteration extends Polygon2D
 	get:
 		return order
 
+var branchs: Array[Branch]
+var ramifications: Array[Ramification]
 var min_y
 var max_y
+
 
 func add_ramification(ramification_: Ramification) -> void:
 	ramifications.append(ramification_)

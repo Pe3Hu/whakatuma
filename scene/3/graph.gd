@@ -1,6 +1,7 @@
 class_name Graph extends Node2D
 
 
+@export var resource: GraphResource
 @export var judge: Judge
 @export var ramifications: Node2D
 @export var branchs: Node2D

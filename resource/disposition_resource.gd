@@ -19,7 +19,6 @@ const segments = [
 
 
 func roll_indexs() -> void:
-	#var _i = 0
 	powers.sort_custom(func(a, b): return a < b)
 	
 	for segment in segments.size():

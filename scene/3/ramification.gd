@@ -63,14 +63,14 @@ class_name Ramification extends Polygon2D
 		return is_swallowed
 
 var iteration: Iteration
+var platforms: Array
+var visited_platforms: Array
+var unvisited_platforms: Array
+var next_ramifications: Array[Ramification]
+var branchs: Dictionary
 var grid: Vector2i
 var index: int
-var platforms: Array
 var powers: int = 0
-var visited_platforms = []
-var unvisited_platforms = []
-var branchs: Dictionary
-var next_ramifications: Array[Ramification]
 var is_clone: bool = false
 
 
