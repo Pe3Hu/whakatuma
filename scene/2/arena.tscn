@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbke1d3q0kvq8"]
+[gd_scene load_steps=3 format=3 uid="uid://cbke1d3q0kvq8"]
 
 [ext_resource type="Script" path="res://scene/2/arena.gd" id="1_sivpd"]
-[ext_resource type="PackedScene" uid="uid://lbn8gbcipoa0" path="res://scene/2/judge.tscn" id="2_m3dqt"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tqiix"]
 
-[node name="Arena" type="PanelContainer" node_paths=PackedStringArray("judge", "clubs")]
+[node name="Arena" type="PanelContainer" node_paths=PackedStringArray("clubs")]
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_tqiix")
 script = ExtResource("1_sivpd")
-judge = NodePath("HBox/Judge")
 clubs = NodePath("HBox/Clubs")
 
 [node name="HBox" type="HBoxContainer" parent="."]
@@ -22,6 +20,3 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 1
-
-[node name="Judge" parent="HBox" instance=ExtResource("2_m3dqt")]
-layout_mode = 2

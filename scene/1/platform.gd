@@ -2,7 +2,7 @@ class_name Platform extends Polygon2D
 
 
 @export var indexLabel: FramedLabel
-@export var powerLabel: FramedLabel
+@export var manaLabel: FramedLabel
 @export var dancefloor: Dancefloor:
 	set(dancefloor_):
 		dancefloor = dancefloor_
@@ -25,17 +25,17 @@ class_name Platform extends Polygon2D
 		indexLabel.update_label()
 	get:
 		return index
-@export var power: int:
-	set(power_):
-		power = power_
-		powerLabel.resource.value = power
-		powerLabel.update_label()
+@export var mana: int:
+	set(mana_):
+		mana = mana_
+		manaLabel.resource.value = mana
+		manaLabel.update_label()
 	get:
-		return power
+		return mana
 
 
 func init_labels() -> void:
-	var keys = ["index", "power"]
+	var keys = ["index", "mana"]
 	
 	for key in keys:
 		var label = get(key + "Label")
@@ -58,3 +58,16 @@ func init_vertexs() -> void:
 	
 	set_polygon(vertexs)
 	
+func roll_mana_increment(charge_: int) -> void:
+	var flag = charge_ >= mana
+	
+	if !flag:
+		var lucky_chance = 1 - float(charge_) / (mana + charge_)
+		Global.rng.randomize()
+		var roll = Global.rng.randf_range(0, 1)
+		
+		flag = roll >= lucky_chance
+	
+	if flag:
+		mana += 1
+		

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpiralResource" load_steps=2 format=3 uid="uid://bc4aqr3y4nvuu"]
+
+[ext_resource type="Script" path="res://resource/spiral/spiral_resource.gd" id="1_5j1xf"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_5j1xf")
+type = "memory"
+title = "100"
+length = 100

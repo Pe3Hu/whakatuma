@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyb2ouym88mrd"]
 
-[ext_resource type="Script" path="res://scene/3/iteration.gd" id="1_np0fj"]
+[ext_resource type="Script" path="res://scene/13/iteration.gd" id="1_np0fj"]
 
 [node name="Iteration" type="Polygon2D"]
 script = ExtResource("1_np0fj")

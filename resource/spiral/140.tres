@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpiralResource" load_steps=2 format=3 uid="uid://c8bxw2fju7pfg"]
+
+[ext_resource type="Script" path="res://resource/spiral/spiral_resource.gd" id="1_26ag2"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_26ag2")
+type = "blood"
+title = "140"
+length = 140

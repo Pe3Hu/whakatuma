@@ -34,7 +34,7 @@ func add_origin_branch() -> void:
 	grid.y = 0
 	grid.x += 1
 	add_ramification(origin, a)
-	var b = cols[grid.x].ramifications.front()
+	#var b = cols[grid.x].ramifications.front()
 	pass
 	
 func add_ramification(platform_: int, parent_: RamificationResource) -> void:
@@ -44,7 +44,7 @@ func add_ramification(platform_: int, parent_: RamificationResource) -> void:
 	var ramification = RamificationResource.new()
 	ramification.graph = self
 	ramification.grid = Vector2i(grid)
-	var parents: Array[RamificationResource]
+	var parents: Array[RamificationResource] = []
 	
 	if parent_ != null:
 		parents.append_array(parent_.parents)

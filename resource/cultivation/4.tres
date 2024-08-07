@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CultivationResource" load_steps=4 format=3 uid="uid://cyi5djyloxyri"]
+
+[ext_resource type="Script" path="res://resource/cultivation/cultivation_resource.gd" id="1_36y0i"]
+[ext_resource type="Resource" uid="uid://c8bxw2fju7pfg" path="res://resource/spiral/140.tres" id="2_pgbgl"]
+[ext_resource type="Resource" uid="uid://cjwg24nqrxtpu" path="res://resource/spiral/70.tres" id="3_nf46q"]
+
+[resource]
+script = ExtResource("1_36y0i")
+spirals = Array[Resource("res://resource/spiral/spiral_resource.gd")]([ExtResource("2_pgbgl"), ExtResource("3_nf46q"), ExtResource("3_nf46q"), ExtResource("2_pgbgl")])
+alpha_indexs = Array[int]([0, 1, 2, 3])
+beta_indexs = Array[int]([4, 5, 6, 7])
+gamma_indexs = Array[int]([8, 9, 10, 11])
+branch_count = 4

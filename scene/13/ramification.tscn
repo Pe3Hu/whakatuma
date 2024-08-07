@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpkuwyb8p2anh"]
 
-[ext_resource type="Script" path="res://scene/3/ramification.gd" id="1_jffqy"]
+[ext_resource type="Script" path="res://scene/13/ramification.gd" id="1_jffqy"]
 [ext_resource type="PackedScene" uid="uid://lu505p4aa3q5" path="res://scene/0/framed_ramification.tscn" id="2_a30bj"]
 
 [node name="Ramification" type="Polygon2D" node_paths=PackedStringArray("framedRamification")]

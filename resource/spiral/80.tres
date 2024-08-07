@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpiralResource" load_steps=2 format=3 uid="uid://dja1l5hg3rpri"]
+
+[ext_resource type="Script" path="res://resource/spiral/spiral_resource.gd" id="1_lywp0"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_lywp0")
+type = "breath"
+title = "80"
+length = 80

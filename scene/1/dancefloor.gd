@@ -1,14 +1,19 @@
-class_name Dancefloor extends Node2D
+class_name Dancefloor extends PanelContainer
 
 
 @export var resource: DispositionResource:
 	set(resource_):
 		resource = resource_
 		
-		update_platform_powers()
+		update_platform_manas()
 	get:
 		return resource
-@export var club: Club
+@export var club: Club:
+	set(club_):
+		club = club_
+	get:
+		return club
+@export var nodes: Node2D
 @export var platforms: Node2D
 @export var bridges: Node2D
 @export var sectors: Node2D
@@ -26,10 +31,10 @@ const bridge_width = 10
 
 
 func _ready() -> void:
-	club.custom_minimum_size = Vector2(offset_platform * sqrt(3), offset_platform * 2)
-	position = club.custom_minimum_size / 2 + Vector2.ONE * platform_extent
-	club.custom_minimum_size.y = offset_platform * 1.5
-	club.custom_minimum_size += Vector2.ONE * platform_extent * 2
+	custom_minimum_size = Vector2(offset_platform * sqrt(3), offset_platform * 2)
+	nodes.position = custom_minimum_size / 2 + Vector2.ONE * platform_extent
+	custom_minimum_size.y = offset_platform * 1.5
+	custom_minimum_size += Vector2.ONE * platform_extent * 2
 	
 	Global.num.index.platform = 0
 	Global.num.index.bridge = 0
@@ -40,7 +45,8 @@ func _ready() -> void:
 	init_sectors()
 	
 	var _resource = DispositionResource.new()
-	_resource.powers = [5,4,4,3,3,3,2,2,2,2,1,1,1,1,1]
+	#_resource.manas = [5,4,4,3,3,3,2,2,2,2,1,1,1,1,1]
+	_resource.manas = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 	resource = _resource
 	
 func init_platforms() -> void:
@@ -155,16 +161,16 @@ func init_bridges() -> void:
 			[4, 2, 3, 1]
 		],
 		[
-			[3, 2, 4, 1],
-			[4, 1, 2, 2]
+			[2, 2, 4, 1],
+			[4, 1, 3, 2]
 		],
 		[
-			[3, 0, 4, 0],
-			[4, 0, 2, 1]
+			[2, 1, 4, 0],
+			[4, 0, 3, 0]
 		],
 		[
-			[3, 4, 4, 2],
-			[4, 2, 2, 0]
+			[2, 0, 4, 2],
+			[4, 2, 3, 4]
 		]
 	]
 	
@@ -226,8 +232,8 @@ func add_sector(indexs_: Array) -> void:
 		sector.dancefloor = self
 		sector.bridges = _brigdes
 	
-func update_platform_powers() -> void:
+func update_platform_manas() -> void:
 	for _i in resource.indexs.size():
 		var index = resource.indexs[_i]
 		var platform = platforms.get_child(index)
-		platform.power = resource.powers[_i]
+		platform.mana = resource.manas[_i]

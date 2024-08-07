@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqx3liprr06hr"]
+[gd_scene load_steps=3 format=3 uid="uid://bqx3liprr06hr"]
 
 [ext_resource type="Script" path="res://scene/1/dancefloor.gd" id="1_tv5f0"]
 
-[node name="Dancefloor" type="Node2D" node_paths=PackedStringArray("platforms", "bridges", "sectors")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rxgt"]
+
+[node name="Dancefloor" type="PanelContainer" node_paths=PackedStringArray("nodes", "platforms", "bridges", "sectors")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_1rxgt")
 script = ExtResource("1_tv5f0")
-platforms = NodePath("Platforms")
-bridges = NodePath("Bridges")
-sectors = NodePath("Sectors")
+nodes = NodePath("Nodes")
+platforms = NodePath("Nodes/Platforms")
+bridges = NodePath("Nodes/Bridges")
+sectors = NodePath("Nodes/Sectors")
 
-[node name="Bridges" type="Node2D" parent="."]
+[node name="Nodes" type="Node2D" parent="."]
 
-[node name="Sectors" type="Node2D" parent="."]
+[node name="Bridges" type="Node2D" parent="Nodes"]
 
-[node name="Platforms" type="Node2D" parent="."]
+[node name="Sectors" type="Node2D" parent="Nodes"]
+
+[node name="Platforms" type="Node2D" parent="Nodes"]

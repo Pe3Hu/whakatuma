@@ -7,9 +7,9 @@ class_name Graph extends Node2D
 @export var branchs: Node2D
 @export var iterations: Node2D
 
-@onready var ramification_scene = preload("res://scene/3/ramification.tscn")
-@onready var branch_scene = preload("res://scene/3/branch.tscn")
-@onready var iteration_scene = preload("res://scene/3/iteration.tscn")
+@onready var ramification_scene = preload("res://scene/13/ramification.tscn")
+@onready var branch_scene = preload("res://scene/13/branch.tscn")
+@onready var iteration_scene = preload("res://scene/13/iteration.tscn")
 
 var cols = {}
 var grid = Vector2i(0, 0)

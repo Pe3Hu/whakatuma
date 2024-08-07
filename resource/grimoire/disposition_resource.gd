@@ -1,12 +1,12 @@
 class_name DispositionResource extends Resource
 
 
-@export var powers: Array:
-	set(powers_):
-		powers = powers_
+@export var manas: Array:
+	set(manas_):
+		manas = manas_
 		roll_indexs()
 	get:
-		return powers
+		return manas
 @export var indexs: Array
 
 const segments = [
@@ -19,7 +19,7 @@ const segments = [
 
 
 func roll_indexs() -> void:
-	powers.sort_custom(func(a, b): return a < b)
+	manas.sort_custom(func(a, b): return a < b)
 	
 	for segment in segments.size():
 		var options = segments[segment].duplicate()

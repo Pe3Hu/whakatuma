@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsr7701h7r470"]
+
+[ext_resource type="Script" path="res://scene/2/grimoire.gd" id="1_dyv6f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_87q61"]
+
+[node name="Grimoire" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxEmpty_87q61")
+script = ExtResource("1_dyv6f")

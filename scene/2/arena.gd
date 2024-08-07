@@ -10,7 +10,7 @@ class_name Arena extends PanelContainer
 
 func _ready() -> void:
 	init_clubs()
-	judge.roll_root()
+	#judge.roll_root()
 	
 func init_clubs() -> void:
 	for _i in 2:

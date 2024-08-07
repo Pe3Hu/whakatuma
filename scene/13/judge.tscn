@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://lbn8gbcipoa0"]
 
-[ext_resource type="Script" path="res://scene/2/judge.gd" id="1_55vty"]
-[ext_resource type="PackedScene" uid="uid://dh1qva30aarvr" path="res://scene/3/graph.tscn" id="2_qw0l0"]
+[ext_resource type="Script" path="res://scene/13/judge.gd" id="1_55vty"]
+[ext_resource type="PackedScene" uid="uid://dh1qva30aarvr" path="res://scene/13/graph.tscn" id="2_qw0l0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y1j1"]
 

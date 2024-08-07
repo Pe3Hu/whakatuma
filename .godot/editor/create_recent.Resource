@@ -1,4 +1,3 @@
-Inventory
-InventoryItem
-InventorySlot
+CultivationResource
+SpiralResource
 Resource

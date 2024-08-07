@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dh1qva30aarvr"]
 
-[ext_resource type="Script" path="res://scene/3/graph.gd" id="1_7td53"]
+[ext_resource type="Script" path="res://scene/13/graph.gd" id="1_7td53"]
 
 [node name="Graph" type="Node2D" node_paths=PackedStringArray("ramifications", "branchs", "iterations")]
 script = ExtResource("1_7td53")
